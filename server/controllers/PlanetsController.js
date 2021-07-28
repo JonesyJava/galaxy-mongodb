@@ -1,4 +1,3 @@
-import express from "express";
 import BaseController from "../utils/BaseController";
 import { planetsService } from "../services/PlanetsService";
 import { moonsService } from "../services/MoonsService";;
@@ -8,7 +7,7 @@ export class PlanetsController extends BaseController {
         super("api/planets");
         this.router
             .get("", this.getAll)
-            .get("/:id/planets", this.getAllMoonsByPlanetsId)
+            .get("/:id/moons", this.getAllMoonsByPlanetsId)
             .post("", this.create)
     }
     async getAllMoonsByPlanetsId(req, res, next) {
